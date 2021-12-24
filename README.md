@@ -2,6 +2,7 @@
 
 
 # Subir apps a kubernetes
+0) usar minikube(?): eval $(minikube docker-env)
 1) crear la imagen de la app
 2) confirurar el achivo .yaml
 3) hacer el comando: kubectl apply -f k8s.yaml
