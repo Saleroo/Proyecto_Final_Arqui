@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment #creando un deployment
+metadata:
+  name: backend1--deployment #nombre del componente
+spec: #especificaciones
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec: #de aqui es donde sacare la imagen para crear mis pods respecto a estas
+      containers:
+      - name: app1-arqui
+        image: app1-arqui
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80

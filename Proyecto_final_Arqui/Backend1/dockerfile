@@ -1,0 +1,5 @@
+from python:3
+workdir /app1
+run pip install flask
+COPY . /app1
+CMD ["python", "app1.py"]
