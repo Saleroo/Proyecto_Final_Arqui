@@ -15,3 +15,4 @@
 2) crear chart(parado en la carpeta del proyecto): helm create buildachart
 3) crear las imagenes de los dockers (pararse en la carpeta donde esten los docker files de cada uno): docker build . -t app1 y docker build . -t app2
 4) crear la imagen de postgrest: 
+5) instalar las imagenes con helm para subir a kubernetes: helm install app1 buildachart --values buildachart/values.yaml
