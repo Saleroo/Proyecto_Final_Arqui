@@ -12,4 +12,5 @@
   curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
   chmod 700 get_helm.sh
   ./get_helm.sh
-2) crear chart(parado en la carpeta del proyecto): helm create mychartname
+2) crear chart(parado en la carpeta del proyecto): helm create buildachart
+3) crear las imagenes de los dockers: docker build . -t app1 y docker build . -t app2
