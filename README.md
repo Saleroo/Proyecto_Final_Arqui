@@ -1,5 +1,8 @@
 # Proyecto_Final_Arqui
 
+# ----ELIMINAR PODS -------
+kubectl get deployments --all-namespaces 
+kubectl delete -n NAMESPACE deployment DEPLOYMENT
 
 # Subir apps a kubernetes
 0) usar minikube(?): eval $(minikube docker-env)
