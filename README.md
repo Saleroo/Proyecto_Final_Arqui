@@ -1,8 +1,11 @@
 # Proyecto_Final_Arqui
 
-# ----ELIMINAR PODS -------
+# -----Eliminar pods -------
 kubectl get deployments --all-namespaces 
 kubectl delete -n NAMESPACE deployment DEPLOYMENT
+
+# ----Eliminar charts ------
+helm uninstall 'nombre_del_chart'
 
 # Subir apps a kubernetes
 0) usar minikube(?): eval $(minikube docker-env)
