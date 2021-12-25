@@ -14,6 +14,7 @@ helm uninstall 'nombre_del_chart'
 3) hacer el comando: kubectl apply -f k8s.yaml
 4) luego se puede verificar los pods en kubernetes con: kubectl get pods
 # Instalar las apps con helm
+0) usar minikube(?): eval $(minikube docker-env)
 1) decargar helm:
   curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
   chmod 700 get_helm.sh
