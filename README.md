@@ -26,4 +26,7 @@ helm uninstall 'nombre_del_chart'
 6) export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
 7) kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
 8) instalar las imagen del app1 con helm para subir a kubernetes: helm install app1 buildachart --values buildachart/values.yaml
-9) crear la imagen de postgrest: 
+9) export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=buildachart,app.kubernetes.io/instance=app1" -o jsonpath="{.items[0].metadata.name}")
+10) export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+11) kubectl --namespace default port-forward $POD_NAME 4444:$CONTAINER_PORT
+11) crear la imagen de postgrest: 
