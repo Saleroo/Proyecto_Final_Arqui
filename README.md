@@ -23,7 +23,7 @@ helm uninstall 'nombre_del_chart'
 3) crear las imagenes de los dockers (pararse en la carpeta donde esten los docker files de cada uno): docker build . -t app1 y docker build . -t app2
 4) crear la imagen de postgrest: 
 5.1) instalar las imagen del app1 con helm para subir a kubernetes: helm install app1 buildachart --values buildachart/values.yaml
-5.2) instalar las imagen del app2 con helm para subir a kubernetes: helm install app2 buildachart2 --values buildachart/values.yaml
-7) export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=buildachart,app.kubernetes.io/instance=app1" -o jsonpath="{.items[0].metadata.name}")
-8) export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
-9) kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
+5.2) instalar las imagen del app2 con helm para subir a kubernetes: helm install app2 buildachart2 --values buildachart2/values.yaml
+6) export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=buildachart,app.kubernetes.io/instance=app1" -o jsonpath="{.items[0].metadata.name}")
+7) export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+8) kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
