@@ -1,18 +1,14 @@
 # Proyecto_Final_Arqui
 
-# -----Eliminar pods -------
-kubectl get deployments --all-namespaces 
-kubectl delete -n NAMESPACE deployment DEPLOYMENT
 
-# ----Eliminar charts ------
+# ----Eliminar charts ----
 helm uninstall 'nombre_del_chart'
 
-# Subir apps a kubernetes
-0) usar minikube(?): eval $(minikube docker-env)
-1) crear la imagen de la app
-2) confirurar el achivo .yaml
-3) hacer el comando: kubectl apply -f k8s.yaml
-4) luego se puede verificar los pods en kubernetes con: kubectl get pods
+# ----para conectarse a la base de datos desde fuera del cluester ejecutar los comandos: ----
+
+    kubectl port-forward --namespace default svc/my-release-postgresql 5432:5432 &
+    PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5432
+
 # Instalar las apps con helm
 0) usar minikube(?): eval $(minikube docker-env)
 1) decargar helm:
