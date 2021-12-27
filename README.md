@@ -31,5 +31,5 @@
       
 ## Crear cronjob
 0) usar minikube: `eval $(minikube docker-env)`
-1) `helm install nombre_del_chart_creado .`
+1) `helm install nombre_del_cronjob .`
 
