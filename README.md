@@ -15,7 +15,7 @@
      `curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3`
      `chmod 700 get_helm.sh`
      `./get_helm.sh`
-2) crear chart(parado en la carpeta del proyecto): `helm create buildachart`
+2) crear chart(parado en la carpeta del proyecto): `helm create nombre_del_chart`
 3) crear las imagenes de los dockers (pararse en la carpeta donde esten los docker files de cada uno): `docker build . -t app1` y `docker build . -t app2`
 4) instalar las imagen del app2 con helm para subir a kubernetes: `helm install app2 buildachart2 --values buildachart2/values.yaml`
 5) `export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=buildachart2,app.kubernetes.io/instance=app2" -o jsonpath="{.items[0].metadata.name}")`
@@ -29,4 +29,7 @@
       `helm repo add bitnami https://charts.bitnami.com/bitnami`
       `helm install my-release bitnami/postgresql`
       
+## Crear cronjob
+0) usar minikube: `eval $(minikube docker-env)`
+1) helm install nombre_del_chart_creado .
 
