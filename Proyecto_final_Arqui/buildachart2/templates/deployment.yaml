@@ -38,18 +38,18 @@ spec:
               containerPort: 8080
               protocol: TCP
           livenessProbe:
-            #tcpSocket:
-              #port: 8080
-            httpGet:
-              path: /
+            tcpSocket:
               port: 8080
+            #httpGet:
+              #path: /
+              #port: 8080
             initialDelaySeconds: 15
           readinessProbe:
-            #tcpSocket:
-              #port: 8080
-            httpGet:
-              path: /
-              port: http
+            tcpSocket:
+              port: 8080
+            #httpGet:
+              #path: /
+              #port: http
             initialDelaySeconds: 15
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

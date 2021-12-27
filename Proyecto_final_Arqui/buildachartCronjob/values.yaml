@@ -1,0 +1,22 @@
+jobs:
+  - name: hello-arqui
+    image:
+      repository: ubuntu
+      tag: latest
+      imagePullPolicy: Always
+    schedule: "* * * * *" 
+    command: ["/bin/bash"]
+    args:
+      - "-c"
+      - "echo $(date) - Hola soy un cronjob!" 
+    resources:
+      limits:
+        cpu: 50m
+        memory: 256Mi
+      requests:
+        cpu: 50m
+        memory: 256Mi
+    failedJobsHistoryLimit: 1
+    successfulJobsHistoryLimit: 10
+    concurrencyPolicy: Forbid
+    restartPolicy: OnFailure

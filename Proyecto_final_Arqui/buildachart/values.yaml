@@ -93,3 +93,4 @@ readinessProbe:
   httpGet:
     path: /
     port: 4444
+
