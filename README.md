@@ -12,9 +12,9 @@
 ## Instalar las apps con helm
 0) usar minikube(?): eval $(minikube docker-env)
 1) decargar helm:
-    `curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3`
-    `chmod 700 get_helm.sh`
-    `./get_helm.sh`
+    .`curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3`
+    .`chmod 700 get_helm.sh`
+    .`./get_helm.sh`
 2) crear chart(parado en la carpeta del proyecto): helm create buildachart
 3) crear las imagenes de los dockers (pararse en la carpeta donde esten los docker files de cada uno): docker build . -t app1 y docker build . -t app2
 4) instalar las imagen del app2 con helm para subir a kubernetes: helm install app2 buildachart2 --values buildachart2/values.yaml
