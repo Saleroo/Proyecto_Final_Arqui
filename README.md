@@ -1,15 +1,15 @@
 # Proyecto_Final_Arqui
 
 
-# ----Eliminar charts ----
+### ----Eliminar charts ----
 helm uninstall 'nombre_del_chart'
 
-# ----para conectarse a la base de datos desde fuera del cluester ejecutar los comandos: ----
+### ----para conectarse a la base de datos desde fuera del cluester ejecutar los comandos: ----
 
     kubectl port-forward --namespace default svc/my-release-postgresql 5432:5432 &
     PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5432
 
-# Instalar las apps con helm
+## Instalar las apps con helm
 0) usar minikube(?): eval $(minikube docker-env)
 1) decargar helm:
     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
