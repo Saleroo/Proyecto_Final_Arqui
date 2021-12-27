@@ -19,10 +19,10 @@
 3) crear las imagenes de los dockers (pararse en la carpeta donde esten los docker files de cada uno): `docker build . -t app1` y `docker build . -t app2`
 4) instalar las imagen del app2 con helm para subir a kubernetes: `helm install app2 buildachart2 --values buildachart2/values.yaml`
 5) `export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=buildachart2,app.kubernetes.io/instance=app2" -o jsonpath="{.items[0].metadata.name}")`
-6) export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
-7) kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
-8) instalar las imagen del app1 con helm para subir a kubernetes: helm install app1 buildachart --values buildachart/values.yaml
-9) export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=buildachart,app.kubernetes.io/instance=app1" -o jsonpath="{.items[0].metadata.name}")
+6) `export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")`
+7) `kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT`
+8) instalar las imagen del app1 con helm para subir a kubernetes: `helm install app1 buildachart --values buildachart/values.yaml`
+9) `export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=buildachart,app.kubernetes.io/instance=app1" -o jsonpath="{.items[0].metadata.name}")`
 10) export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
 11) kubectl --namespace default port-forward $POD_NAME 4444:$CONTAINER_PORT
 11) instalar postgrest con heml: 
