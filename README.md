@@ -29,6 +29,4 @@
       `helm repo add bitnami https://charts.bitnami.com/bitnami`
       `helm install my-release bitnami/postgresql`
       
-## Crear Cronjob con helm
-0) usar minikube: `eval $(minikube docker-env)`
-1) crear chart(parado en la carpeta del proyecto): `helm create buildachartCronjob`
+
