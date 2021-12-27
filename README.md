@@ -2,7 +2,7 @@
 
 
 ### ----Eliminar charts ----
-helm uninstall 'nombre_del_chart'
+`helm uninstall 'nombre_del_chart'`
 
 ### ----para conectarse a la base de datos desde fuera del cluester ejecutar los comandos: ----
 
