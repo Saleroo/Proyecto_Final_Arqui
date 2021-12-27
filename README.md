@@ -16,9 +16,9 @@ helm uninstall 'nombre_del_chart'
 # Instalar las apps con helm
 0) usar minikube(?): eval $(minikube docker-env)
 1) decargar helm:
-  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-  chmod 700 get_helm.sh
-  ./get_helm.sh
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+    chmod 700 get_helm.sh
+    ./get_helm.sh
 2) crear chart(parado en la carpeta del proyecto): helm create buildachart
 3) crear las imagenes de los dockers (pararse en la carpeta donde esten los docker files de cada uno): docker build . -t app1 y docker build . -t app2
 4) instalar las imagen del app2 con helm para subir a kubernetes: helm install app2 buildachart2 --values buildachart2/values.yaml
@@ -29,4 +29,7 @@ helm uninstall 'nombre_del_chart'
 9) export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=buildachart,app.kubernetes.io/instance=app1" -o jsonpath="{.items[0].metadata.name}")
 10) export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
 11) kubectl --namespace default port-forward $POD_NAME 4444:$CONTAINER_PORT
-11) crear la imagen de postgrest: 
+11) instalar postgrest con heml: 
+      helm repo add bitnami https://charts.bitnami.com/bitnami
+      helm install my-release bitnami/postgresql
+      
