@@ -10,7 +10,7 @@
     PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5432
 
 ## Instalar las apps con helm
-0) usar minikube(?): eval $(minikube docker-env)
+0) usar minikube(?): `eval $(minikube docker-env)`
 1) decargar helm:
      `curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3`
      `chmod 700 get_helm.sh`
