@@ -1,6 +1,7 @@
 from python:3
 workdir /app2
 run pip install flask
+run pip install elastic-apm[flask]
 COPY . /app2
 CMD ["python", "app2.py"]
 
