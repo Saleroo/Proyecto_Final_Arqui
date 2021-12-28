@@ -35,4 +35,6 @@
 2) `helm uninstall nombre_del_cronjob .` ( desinstalar el cronjob una ves ya termino su trabajo) (recomendado)
 ### mirar el log de un pod cronjob
 `kubectl logs -f nombre_del_pod`
-
+## Crear observabilidad 
+0) Se debe crear el APM server ubicado en la pagina web de elasticsearch, para ello se debe tener una cuenta en ella (recomendado registrarse con cuenta de google) https://www.elastic.co/
+1) Buscar APM y darle a "Add data" y si es la primera vez crear un APM siguiendo los pasos de la pagina
