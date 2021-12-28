@@ -32,7 +32,7 @@
 ## Crear cronjob
 0) usar minikube: `eval $(minikube docker-env)`
 1) `helm install nombre_del_cronjob .` ( debes estar dentro de la carpeta del chart creado del cronjob)
-2) `helm uninstall nombre_del_cronjob .` ( desinstalar el cronjob una ves ya termino su trabajo) (recomendado)
+2) `helm uninstall nombre_del_cronjob` ( desinstalar el cronjob una ves ya termino su trabajo) (recomendado)
 ### mirar el log de un pod cronjob
 `kubectl logs -f nombre_del_pod`
 ## Crear observabilidad 
